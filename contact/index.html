@@ -1,0 +1,40 @@
+---
+layout: default
+title: Contact Us
+permalink: /contact/
+bannerimage: '/assets/img/banners/school.jpg'
+slug: contact
+section: contact
+---
+
+<section class="banner" style="background-image: url({{ page.bannerimage }});">
+	<div class="container">
+		<h1>{{ page.title }}</h1>
+	</div>
+</section>
+
+<section>
+	<div class="container">
+		<div>
+			<p>For all inquiries please contact:</p>
+
+			<p><a href="tel:+447950244932">+44 (0) 7950 244 932</a></p>
+
+			<p>...or speak to a member of our team at reception on when dropping off your child.</p>
+		</div>
+	</div>
+
+	<div class="container">
+		<div>
+			<h4>Social Media</h4>
+
+			<p>Follow Music Centre London on Social Media!</p>
+
+			<p><a href="https://www.facebook.com/{{ site.facebook }}/" class="icon"><i class="fa fa-facebook fa-fw" aria-hidden="true"></i> Facebook</a></p>
+		</div>
+	</div>
+</section>
+
+{% include html/section/mailing-list.html %}
+
+{% include html/section/alumni.html %}

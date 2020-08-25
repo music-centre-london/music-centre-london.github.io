@@ -1,0 +1,44 @@
+body.landing {
+
+	* {
+		//display: none;
+	}
+
+	section#landing {
+		background: transparent;
+	}
+
+	main {
+		background: none;
+	}
+
+	.landing-content {
+		color: white;
+		font-size: 1.6em;
+		@include xs { font-size: 1.2em }
+		text-shadow: 1px 2px 5px tr(0.5);
+
+		h1 {
+			color: white;
+			line-height: 1.1em;
+			margin-bottom: 0.5em;
+		}
+
+		p:last-child {
+			margin-bottom: 2em;
+		}
+	}
+
+	&:before {
+		@include colorize-bg('https://upload.wikimedia.org/wikipedia/commons/5/57/London_from_above_MLD_051002_001.jpg', tr(0.64));
+	}
+}
+
+body.crouchend:before {
+	@include recolorize-bg('http://www.acornpropertygroup.org/wp-content/uploads/2015/12/AdobeStock_2933120-e1449072172275.jpeg', tr(0.64));
+}
+
+body.finsburypark:before {
+	@include recolorize-bg('https://upload.wikimedia.org/wikipedia/commons/2/24/Finsbury_Park_tube_stn_entrance_Station_Place.JPG', tr(0.64));
+}
+

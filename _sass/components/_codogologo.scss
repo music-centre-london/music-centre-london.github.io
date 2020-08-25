@@ -1,0 +1,34 @@
+.codogologo {
+	@extend .noselect;
+
+	span {
+		line-height: 1;
+		position: relative;
+	}
+}
+
+@mixin codogologo($scale: 1, $color: white) {
+	.codogologo {
+
+		img, svg {
+			height: 50px * $scale;
+		}
+
+		svg {
+			.cls-1 {
+				fill: $color;
+			}
+			.cls-2 {
+				stroke: $color;
+			}
+		}
+
+		span {
+			color: $color;
+			font-size: 30px * $scale;
+			top: -22px * $scale;
+			margin-left: 2px * $scale;
+			letter-spacing: -1px * $scale;
+		}
+	}
+}

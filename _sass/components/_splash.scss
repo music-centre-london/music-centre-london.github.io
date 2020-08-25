@@ -1,0 +1,59 @@
+section.splash {
+	overflow: hidden;
+	position: relative;
+
+	.container {
+		background: rgba(toblack($color-primary, 0.6), 0.6);
+		height: 400px;
+		height: 100vh;
+		text-align: center;
+		position: relative;
+		z-index: 2;
+
+		.logo {
+			left: 50%;
+			margin: 0 auto;
+			position: absolute;
+			top: 50%;
+			width: 200px;
+			
+			@include transform(translate(-50%,-50%));
+
+			@include xs {
+				width: 85%;
+			}
+
+			img {
+				width: 100%;
+				height: auto;
+			}
+		}
+
+		.tagline {
+			left: 50%;
+			position: absolute;
+			top: 60%;
+
+			@include transform(translate(-50%,-50%));
+
+			h2 {
+				color: $white;
+				font-weight: bold;
+			}
+		}
+	}
+
+	.splash-background-container {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		overflow: hidden;
+
+		img {
+			min-width:100%;
+			min-height: 100%;
+		}
+	}
+}

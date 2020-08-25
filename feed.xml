@@ -1,0 +1,85 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>{{ site.title | xml_escape }}</title>
+		
+		<description>{{ site.description | xml_escape }}</description>
+		
+		<link>{{ site.url }}{{ site.baseurl }}/</link>
+		
+		<atom:link href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" rel="self" type="application/rss+xml"/>
+		
+		<pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
+
+		<lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
+		
+		<generator>Jekyll v{{ jekyll.version }}</generator>
+
+		{% for post in site.posts limit:10 %}
+			<item>
+				<title>{{ post.title | xml_escape }}</title>
+				
+				<description>{{ post.content | xml_escape }}</description>
+				
+				<pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
+				
+				<link>{{ post.url | prepend: site.baseurl | prepend: site.url }}</link>
+				
+				<guid isPermaLink="true">{{ post.url | prepend: site.baseurl | prepend: site.url }}</guid>
+				
+				{% for tag in post.tags %}
+					<category>{{ tag | xml_escape }}</category>
+				{% endfor %}
+
+				{% for cat in post.categories %}
+					<category>{{ cat | xml_escape }}</category>
+				{% endfor %}
+			</item>
+		{% endfor %}
+
+		{% for exhibition in site.exhibitions limit:10 %}
+			<item>
+				<title>{{ exhibition.title | xml_escape }}</title>
+				
+				<description>{{ exhibition.content | xml_escape }}</description>
+				
+				<pubDate>{{ exhibition.date | date_to_rfc822 }}</pubDate>
+				
+				<link>{{ exhibition.url | prepend: site.baseurl | prepend: site.url }}</link>
+				
+				<guid isPermaLink="true">{{ exhibition.url | prepend: site.baseurl | prepend: site.url }}</guid>
+			</item>
+		{% endfor %}
+
+		{% for journal in site.journals limit:10 %}
+			<item>
+				<title>{{ journal.title | xml_escape }}</title>
+				
+				<description>{{ journal.content | xml_escape }}</description>
+				
+				<pubDate>{{ journal.date | date_to_rfc822 }}</pubDate>
+				
+				<link>{{ journal.url | prepend: site.baseurl | prepend: site.url }}</link>
+				
+				<guid isPermaLink="true">{{ journal.url | prepend: site.baseurl | prepend: site.url }}</guid>
+			</item>
+		{% endfor %}
+
+		{% for artist in site.artists %}
+			<item>
+				<title>{{ artist.title | xml_escape }}</title>
+				
+				<description>{{ artist.content | xml_escape }}</description>
+				
+				<pubDate>{{ artist.date | date_to_rfc822 }}</pubDate>
+				
+				<link>{{ artist.url | prepend: site.baseurl | prepend: site.url }}</link>
+				
+				<guid isPermaLink="true">{{ artist.url | prepend: site.baseurl | prepend: site.url }}</guid>
+			</item>
+		{% endfor %}
+	</channel>
+</rss>

@@ -1,0 +1,44 @@
+<li>
+	<a class="link {% if page.section == 'about' %}active{% endif %}" href="{{ site.baseurl }}/about/">
+		<span>About Us</span><span class="dropdown-arrow">&#x25BC;</span>
+	</a>
+
+	<div class="dropdown-arrow"><span>&#x25BC;</span></div>
+
+	<ul class="dropdown-content">
+		<a class="link {% if page.slug == 'aims' %}active{% endif %}" href="{{ site.baseurl }}/about/aims/"><li>Our Aims</li></a>
+
+		<a class="link {% if page.slug == 'notable' %}active{% endif %}" href="{{ site.baseurl }}/about/notable/"><li>Notable Performances</li></a>
+
+		<a class="link {% if page.slug == 'team' %}active{% endif %}" href="{{ site.baseurl }}/about/young-apprentice/"><li>Our Apprentices</li></a>
+	</ul>
+</li>
+
+
+<li>
+	<a class="link {% if page.section == 'getting-involved' %}active{% endif %}" href="{{ site.baseurl }}/getting-involved/">
+		<span>Getting Involved</span><span class="dropdown-arrow">&#x25BC;</span>
+	</a>
+
+	<div class="dropdown-arrow"><span>&#x25BC;</span></div>
+
+	<ul class="dropdown-content">
+		<a class="link {% if page.slug == 'calendar' %}active{% endif %}" href="{{ site.baseurl }}/getting-involved/calendar/"><li>Calendar</li></a>
+	</ul>
+</li>
+
+<li>
+	<a class="link {% if page.section == 'contact' %}active{% endif %}" href="{{ site.baseurl }}/contact/">
+		<span>Contact</span><span class="dropdown-arrow">&#x25BC;</span>
+	</a>
+
+	<div class="dropdown-arrow"><span>&#x25BC;</span></div>
+
+	<ul class="dropdown-content">
+		<a class="link {% if page.slug == 'us' %}active{% endif %}" href="{{ site.baseurl }}/contact/"><li>Contact Us</li></a>
+
+		<a class="link {% if page.slug == 'getting-here' %}active{% endif %}" href="{{ site.baseurl }}/contact/getting-here/"><li>Locations</li></a>
+
+		<a class="link {% if page.slug == 'newsletter' %}active{% endif %}" href="{{ site.baseurl }}/contact/newsletter/"><li>Newsletter</li></a>
+	</ul>
+</li>

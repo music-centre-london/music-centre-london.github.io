@@ -1,0 +1,92 @@
+$submit-width: 100px;
+
+.form.signup {
+	margin: .5em 0 1.5em 0;
+	height: 2.4em;
+	position: relative;
+
+	.input {
+		padding: 0.7em;
+		position: absolute;
+		top: 0;
+		line-height: 1;
+
+		&.email {					
+			left: 0;					
+			right: $submit-width;
+			background: $white;
+			text-align: left;
+			white-space: nowrap;
+			overflow: hidden;
+			border: 1px solid tr(0.1);
+			border-right: 0;
+
+			& br {
+				display: none;
+			}
+
+			&:empty:before {
+				content: 'yourname@example.com';
+				opacity: 0.5;
+			}
+		}
+
+		&.submit {
+			right: 0;
+			width: $submit-width;
+			background: $color-primary;
+			color: $white;
+			cursor: pointer;
+			border: 1px solid $color-primary;
+			font-weight: 600;
+			text-align: center;
+
+			&:hover {
+				background: $color-primary-dark;
+				border: 1px solid $color-primary-dark;
+
+				@include shadow(1);
+			}
+		}
+
+		&:focus {
+			outline: 0;
+			border: 1px solid $color-primary;
+			border-right: 0;
+		}
+	}
+
+	.message {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		right: 0;
+		margin-top: 0.3em;
+		font-size: 0.8em;
+
+		&.error {
+			color: red;					
+		}
+
+		&.success {
+			color: #29a329
+		}
+	}
+}
+
+.form.location {
+	font-size: 0.8em;
+
+	> p {
+		margin-bottom: 0.5em;
+	}
+
+	.row {
+		align-items: center;
+
+		label {
+			margin-left: 1em;
+			margin-right: 1em;
+		}
+	}
+}

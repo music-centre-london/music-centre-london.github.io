@@ -1,0 +1,306 @@
+
+// ------------------- Navigation Bar ----------------------//
+
+nav {
+	background-color: $color-primary;
+	color: $white;
+	display: flex;
+	flex-direction: row;
+	font-size: 1.1em;
+	height: $navbar-height;
+	left: 0;
+	line-height: 1;
+	list-style: none;
+	margin: 0 auto;
+	padding: 0 1em;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 10;
+	justify-content: space-between;
+
+	@include xs {
+		height: $navbar-height-xs;		
+	}
+
+	@include bp (md, min) {
+		padding: 0 1em;
+	}
+
+	@include shadow(2);
+
+	a:hover {
+		color: $midgray;
+		text-decoration: none;
+	}
+
+	.navbar-header {
+		height: 100%;
+
+		a,
+		img {
+			height: 100%;
+
+			&:hover {
+				opacity: 0.9;
+			}
+		}
+	}
+
+	ul.navbar-left {
+		align-self: flex-end;
+		height: 100%;
+
+		> li {
+			float: left;
+
+			> a {
+				color: $white;
+			}
+
+			&.active {
+				color: $lightgray;
+			}
+		}
+
+		li > a,
+		a > li {
+			font-size: 0.8em;
+			vertical-align: middle;
+			display: inline-block;
+			padding: 0 1.5em;
+			height: 100%;
+			display: flex;
+			align-items: center;
+		}
+
+		li {
+			font-family: $font-header;
+			height: 100%;
+			list-style: none;
+			text-decoration: none;
+			text-transform: uppercase;
+
+			.dropdown-arrow {
+				font-size: 0.8em;
+				line-height: 1.25em;
+				margin-left: 0.5em;
+			}
+
+			div.dropdown-arrow {
+				display: none;
+			}
+
+			.dropdown-content {
+				display: none;
+				position: absolute;
+				top: $navbar-height;
+				background: $lightgray;
+
+				@include xs {
+					top: $navbar-height-xs;
+				}				
+
+				a {
+					font-size: 0.65em;
+					color: $color-primary;
+
+					li {
+						padding: 1.4em 2.3em;						
+					}					
+				}
+
+				a:hover {
+					color: $color-primary-dark;
+					li {
+						background: $midgray;
+					}
+				}
+
+				@include shadow(1);
+			}
+
+			&:hover {
+				.dropdown-content {
+					display: block;
+				}
+			}
+
+			&.cta {
+				border-radius: 3px;
+				border: 2px solid $color-primary;
+				font-weight: bold;
+
+				@include bp(sm, max) {
+					display: none;
+				}	
+			}
+		}
+
+		@include bp(sm, max) {
+			display: none;
+		}
+	}
+
+	.navbar-panel-button {
+		float: right;
+		font-size: 0.8em;
+		margin-right: 1em;
+		position: relative;
+		text-decoration: none;
+		text-transform: uppercase;
+		z-index: 1;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		@include bp(md) {
+			display: none;
+		}
+
+		&:before {
+			content: 'Menu';
+			display: block;
+			transition: 0.2s linear opacity;
+		}
+
+		&:after {
+			content: 'Close';
+			display: none;
+			transition: 0.2s linear opacity;
+		}
+
+		&.open {
+			&:before {
+				display: none;
+			}
+
+			&:after {
+				display: block;
+			}
+		}
+	}
+
+	ul.navbar-panel {
+		background: $white;
+		bottom: 0;
+		color: $black;
+		max-width: 360px;
+		overflow-y: scroll;
+		position: fixed;
+		right: 100%;
+		top: $navbar-height;
+		transition: 0.2s ease-out all;
+		width: 80%;
+
+		@include xs {
+			top: $navbar-height-xs;
+		}
+
+		@include shadow(2);
+		
+		@include bp(md) {
+			display: none;
+		}
+
+		li {
+			list-style: none;
+			text-decoration: none;
+			position: relative;
+
+			a, 
+			.dropdown-arrow {
+				color: $black;
+				display: block;
+				padding: 15px $half-gutter;
+				border-bottom: 1px solid $midgray;
+			}
+
+			$dropdown-arrow-btn-width: 40px;
+
+			span.dropdown-arrow {
+				display: none;
+				font-size: 0.8em;
+			}
+
+			a {
+				&:hover {
+					color: $black;
+				}
+
+				&.active {
+					border-left: 5px solid $color-accent;
+					padding-left: $half-gutter - 5px;
+				}
+
+				&.dropdown {
+					margin-right: $dropdown-arrow-btn-width;
+				}
+			}
+
+			.dropdown-arrow {
+				position: absolute;
+				right: 0;
+				top: 0;
+				width: $dropdown-arrow-btn-width;
+				text-align: right;
+			
+				span {
+					@include transform(rotate(0deg));
+					transition: 0.2s ease-out all;
+				}
+				
+				&.open span {
+					@include transform(rotate(180deg));
+				}
+			}
+		}
+
+		.dropdown-content {
+			background: $lightgray;
+			display: none;
+		}
+
+		&::-webkit-scrollbar {
+		    width: 0px;  /* remove scrollbar space */
+		    background: transparent;  /* optional: just make scrollbar invisible */
+		}
+
+		&.open {
+			@include transform(translateX(100%));
+			transition: 0.2s ease-out all;
+		}
+	}
+
+	&.inverted {
+		background-color: $white;
+		color: $color-primary;
+
+		ul.navbar-left {
+			li {
+				color: $color-primary;
+
+				a.active {
+					color: $color-accent;
+				}
+			}
+		}
+	}
+
+	.darken {
+		background: rgba(0,0,0,0.5);
+		bottom: 0;
+		display: none;
+		left: 0;
+		position: fixed;
+		right: 0;
+		top: 3.6em;
+
+		@include bp(md) {
+			display: none;
+			height: 0;
+			width: 0;
+		}
+	}
+}

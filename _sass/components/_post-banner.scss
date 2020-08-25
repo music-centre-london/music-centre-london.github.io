@@ -1,0 +1,76 @@
+$banner-height: 400px;
+$article-inset: 0px;
+
+.post-banner {
+	background-image: url('');
+	background-attachment: fixed;
+	background-position: center bottom;
+	background-size: cover;
+	margin-bottom: -$article-inset;
+	position: relative;
+	width: 100%;
+
+	@include shadow(-1);
+
+	&,
+	[class^="col-"] {
+		height: $banner-height;
+		@include bp-each(height, 200px, 300px, 400px, 400px);
+	}
+
+	.darken {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: rgba(0,0,0,0.5);
+	}
+
+	.text {
+		position: relative;
+
+		.title {
+			h1 {
+				color: $white;
+				font-size: 64px;
+				font-family: $font-header;
+				font-weight: bold;
+				line-height: 1;
+				text-align: left;
+				text-shadow: 0 2px 5px black;
+
+				@include bp-each(font-size, 24px, 48px, 64px, 64px);
+			}
+		}
+
+		.meta {
+			color: $white;
+			margin-top: 0.5em;
+			opacity: 0.8;
+			text-align: left;
+			text-transform: uppercase;
+
+			.excerpt {
+				text-transform: none;
+			}
+
+			.day {
+				&:after {
+					content: 'th';
+					font-size: 0.8em;
+				}
+
+				&.day01:after, &.day21, &.day31 {
+					content: 'st';
+				}
+				&.day02, &.day22 {
+					content: 'nd';
+				}
+				&.day03, &.day23 {
+					content: 'rd';
+				}
+			}
+		}
+	}
+}

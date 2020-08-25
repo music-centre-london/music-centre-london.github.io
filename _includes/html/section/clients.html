@@ -1,0 +1,31 @@
+<section id="clients" name="clients" name="clients">
+	<div class="container">
+		<div class="sec-header">Client portfolio</div>
+		
+		<div class="row">
+			{% assign clients = site.clients | sort: "order" %}
+			
+			{% for client in clients %}
+				<div class="col-xs-12 col-sm-6">
+					<div class="client" style="background-image:url('{{ site.baseurl }}/assets/img/clients/{{ client.slug }}/sitepic.jpg')">
+						<div class="filter"></div>
+						
+						<a href="{{ site.baseurl }}{{ client.url }}">
+							<div class="logo" style="background-image:url('{{ site.baseurl }}/assets/img/clients/{{ client.slug }}/logo.png')"></div>
+						</a>
+						
+						<div class="info">
+							<a href="{{ site.baseurl }}{{ client.url }}" style="background-color: {{ client.color }}; color: white;">
+								<div class="name">{{ client.title }}</div>
+							</a>
+
+							<div class="text">{{ client.summary | truncate: 190 }}</div>
+							
+							<a href="{{ site.baseurl }}{{ client.url }}" class="btn small" style="background-color: {{ client.color }}">Find out more</a>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>	
+	</div>
+</section>

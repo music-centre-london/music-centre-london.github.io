@@ -1,0 +1,9 @@
+@mixin gutter($gap, $mb) {
+	[class^=col] {
+		padding-left: $gap / 2;
+		padding-right: $gap / 2;
+		@if $mb {
+			margin-bottom: $gap;
+		}
+	}
+}

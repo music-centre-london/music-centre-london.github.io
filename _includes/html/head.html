@@ -1,0 +1,102 @@
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>{{ site.title | escape }} | {% if page.title %}{{ page.title | escape }}{% else %}{{ site.description }}{% endif %}</title>
+
+	<meta name="description" content="{% if post.excerpt %}{{ post.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+	<meta name="google-site-verification" content="MZbib9pTkBH1JkN9TTYdEqPEPSNy8bjTMLCAL75DbYY" />
+	<!--<meta name="keywords" content="{{ page.title }}, Codogo, web development, knowt, agency, maxi clayton clowes, freddie ridell, {{ page.tags }}">--> <!-- Key words outdated -->
+
+	<meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+	<meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}" />
+	<meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
+	<meta property="og:site_name" content="Blue Milk" />
+	<meta property="og:description" content="{% if post.excerpt %}{{ post.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}" />
+	<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+	<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
+
+	{% comment %} Social {% endcomment %}
+	{% comment %} General image{% endcomment %}
+	<link rel="image_src" type="image/jpeg" href="{% if page.bannerimage %}{{ site.url }}/{{ page.bannerimage }}{% else %}{{ site.url }}/assets/img/siteimg.png{% endif %}" />
+
+	{% comment %} 180x110 Image for Linkedin {% endcomment %}
+	<meta property="og:image" content="{% if page.bannerimage %}{{ site.url }}/{{ page.bannerimage }}{% else %}{{ site.url }}/assets/img/siteimg.png{% endif %}" />
+	<meta property="og:image:width" content="180" />
+	<meta property="og:image:height" content="110" />
+
+	{% comment %} 600x315 Image for Facebook {% endcomment %}
+	<meta property="og:image" content="{% if page.bannerimage %}{{ site.url }}/{{ page.bannerimage }}{% else %}{{ site.url }}/assets/img/siteimg.png{% endif %}" />
+	<meta property="og:image:width" content="600" />
+	<meta property="og:image:height" content="315" />
+
+	{% comment %} Twitter Card {% endcomment %}
+
+	{% comment %}<meta name="twitter:card" content="summary">{% endcomment %}
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="{{ site.twitter-username }}">
+	<meta name="twitter:creator" content="{{ site.twitter-creator }}">
+
+	{% if page.title %}
+		<meta name="twitter:title" content="{{ page.title }}">
+	{% else %}
+		<meta name="twitter:title" content="{{ site.title }}">
+	{% endif %}
+
+	{% if page.url %}
+		<meta name="twitter:url" content="{{ site.url }}{{ page.url }}">
+	{% else %}
+		<meta name="twitter:url" content="{{ site.url }}">
+	{% endif %}
+
+	{% if page.description %}
+	  <meta name="twitter:description" content="{{ page.description }}">
+	{% else %}
+	  <meta name="twitter:description" content="{{ site.description }}">
+	{% endif %}
+
+	{% if page.bannerimage %}
+	  <meta name="twitter:image:src" content="{{ site.url }}/{{ page.bannerimage }}">
+	{% else %}
+	  <meta name="twitter:image:src" content="{{ site.url }}/assets/img/siteimg.png">
+	{% endif %}
+
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="{{ "/assets/css/main.css" | prepend: site.baseurl }}">
+
+	<!-- JS -->
+	<script type="text/javascript" src="/assets/js/bundle.js" charset="utf-8"></script>
+
+	<!-- Analytics -->
+	<!-- Google analytics -->
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		ga('create', '{{ site.ga-analytics }}', 'auto');
+		ga('send', 'pageview');
+	</script>
+
+	<!-- Cookie Warning -->
+
+	<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+	<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+	<script>
+		window.addEventListener("load", function(){
+		window.cookieconsent.initialise({
+			"palette": {
+				"popup": {
+					"background": "#333",
+					"text": "#fff"
+				},
+				"button": {
+					"background": "#fff",
+					"text": "#333"
+				}
+			}
+		})});
+	</script>
+</head>

@@ -1,0 +1,261 @@
+section#projects{
+	padding-top: 1.5em;
+
+	[class^=col] {
+		margin-bottom: 0;
+	}
+	// .row {
+	// 	overflow: hidden;
+	// }
+
+	// .col-md-6 {
+	// 	margin-bottom: -99999px;
+ //  		padding-bottom: 99999px;
+	// }
+
+	// .row {
+	// 	display: table;
+	// }
+
+	// [class*="col-"] {
+	// 	float: none;
+	// 	display: table-cell;
+	// 	vertical-align: top;
+	// }
+}
+
+.service {
+	padding: 2em;
+	//text-align: center;
+	text-align: center;
+	@include lg() {
+		text-align: justify;
+	}
+	//@include bp-each(height, auto, auto, 33.45em, 31.3em);
+
+	.inner {
+		width: 100%;
+		height: 100%;
+		position: relative;
+		padding-bottom: 2.7em;
+	}
+
+	h1 {
+		line-height: 1;
+		font-size: 3em;
+		text-align: center;
+		display: none;
+	}
+
+	.btn-wrapper {
+		text-align: center;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+	}
+
+	@mixin servicebox($color) {
+		background: towhite($color, 0.8);
+		//color: $color;
+		//border: 1px solid $color;
+
+		.btn {
+			background: $color;
+		}
+
+		@include xs { @include codogologo(1, $color-text) };
+		@include sm { @include codogologo(2, $color-text) };
+		@include md { @include codogologo(1.75, $color-text) };
+		@include lg { @include codogologo(2, $color-text) };
+		.codogologo {
+			text-align: center;
+		}
+	}
+
+	&.con {
+		@include servicebox($con-purple);
+	}
+
+	&.wri {
+		@include servicebox($wri-orange);
+	}
+}
+
+.service, .logo-box {
+
+	h3 {
+		text-transform: uppercase;
+		font-weight: bold;
+		font-size: 1em;
+		text-align: center;
+	}
+
+	.logos {
+		text-align: center;
+		//margin-bottom: 2em;
+
+		.logo {
+			display: inline-block;
+			width: 4em;
+			height: 2.5em;
+			margin: 0.25em;
+			//background: tr(0.2);
+			background-image: url('');
+			background-position: center center;
+			background-size: contain;
+			background-repeat: no-repeat;
+			opacity: 0.25;
+
+			// &.akkroo {
+			// 	background-image: url('/assets/img/projects/akkroo2-w.png');
+			// }
+
+			// &.nhs {
+			// 	background-image: url('/assets/img/projects/nhs-w.png');
+			// }
+
+			// &.wd {
+			// 	background-image: url('/assets/img/projects/wd-w.png');
+			// }
+
+			// &.react {
+			// 	background-image: url('/assets/img/projects/react-w.png');
+			// }
+
+			// &.redux {
+			// 	background-image: url('/assets/img/projects/redux-w.png');
+			// }
+
+			// &.graphql {
+			// 	background-image: url('/assets/img/projects/graphql-w.png');
+			// }
+
+			// &.lambda {
+			// 	background-image: url('/assets/img/projects/lambda-w.png');
+			// }
+		}
+	}
+}
+
+.logo-col {
+	height: 100%;
+	width: 100%;
+	position: relative;
+	@include bp(md, min) {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		width: 50%;
+		//z-index: 1;
+	}
+}
+
+@include bp(md, min) {
+	.bg-con .logo-col {
+		left: 50%;
+	}
+	.bg-wri .logo-col {
+		right: 50%;
+	}
+}
+
+.logo-box {
+	@include bp(md, min) {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		left: 0;
+		width: 100%;
+		@include transform(translate(-0%,-50%));
+		z-index: 1;
+	}
+	@include bp(sm, max) {
+		margin-top: 1.5em;
+	}	
+	h3 {
+		color: white;
+		margin-bottom: 0.5em;
+		opacity: 0.5;
+	}
+
+	.logos {
+		.logo {
+			opacity: 0.5;
+			width: 4em;
+			height: 3em;
+			position: relative;
+			//z-index: 1;
+			@include transition(0.15s opacity linear);
+			-webkit-backface-visibility: hidden;
+			@include transform(translateZ(0) scale(1,1));
+
+			&:hover {
+				opacity: 0.75;
+			}
+		}
+	}
+}
+
+.newsletter {
+	@include bp-each(margin-top, 30px, 50px, 70px, 70px);
+
+	h1 {
+		position: relative;
+		display: inline-block;
+
+		.fa {
+			opacity: 0.1;
+			font-size: 2em;
+			position: relative;
+			top: 0.2em;
+			margin-right: 0.2em;
+			//@include transform(translate(-50%,-50%));
+			@include transform(rotate(-20deg));
+
+			position: absolute;
+			left: -0.5em;
+    		top: -0.1em;
+		}
+	}
+	
+}
+
+.new {
+	.bg-con, .bg-wri {
+		padding: 1.5em 0;
+
+		.row {
+			position: relative;
+		}
+	}
+
+	.bg-con {
+		@include colorize-bg('https://consulting.codogo.io/assets/img/splash-bg.jpg', rgba(toblack($con-purple,0.5),0.8));
+		//margin-bottom: 4px;
+
+	}
+
+	.bg-wri {
+		@include colorize-bg('https://write.codogo.io/assets/img/bg.jpg', rgba(toblack($wri-orange,0.5),0.8))
+	}
+
+	.service {
+		text-align: left;
+		//font-size: 0.8em;
+		background: rgba(white, 0.75) !important;
+		padding: 1.5em;
+	}
+
+	.btn-wrapper {
+		text-align: left;
+	}
+
+	.codogologo {
+		text-align: left !important
+	}
+
+	.logos {
+		//text-align: left;
+	}
+}

@@ -1,0 +1,18 @@
+// ---- Font Imports ---- //
+
+// keep fonts commented out if not in use,
+// including them in the css has a non-negligible effect on load time
+// since they are loaded externally (fonts.gstatic.com)
+
+$font-ave: 'Avenir Next', 'Montserrat', Helvetica, sans-serif;
+$font-lato: 'Lato', Helvetica, sans-serif;
+@import url(https://fonts.googleapis.com/css?family=Lato|Montserrat);
+
+// ---- Font Settings ---- //
+
+$font-size: 18px;
+$font-size-xs: 14px;
+$font-size-lg: 20px;
+
+$font-default: $font-ave;
+$font-header: $font-lato;

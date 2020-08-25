@@ -1,0 +1,34 @@
+---
+layout: default
+title: Newsletter
+permalink: /contact/newsletter/
+bannerimage: '/assets/img/banners/prom-3.jpg'
+slug: newsletter
+section: contact
+---
+
+<section class="banner" style="background-image: url({{ page.bannerimage }}); background-size: cover; background-position: center center;">
+	<div class="container">
+		<h1>{{ page.title }}</h1>
+
+		<h4>Stay up to date with all the Music Centre sessions and concerts.</h4>
+	</div>
+</section>
+
+<section>
+	<div class="container">
+		<h3>Recent Islington Newsletters</h3>
+
+		<div class="mailchimp islington-mailchimp">
+		</div>
+	</div>
+
+	<div class="container">
+		<h3>Recent Southwark Newsletters</h3>
+
+		<div class="mailchimp southwark-mailchimp">
+		</div>
+	</div>
+</section>
+
+{% include html/section/mailing-list.html %}

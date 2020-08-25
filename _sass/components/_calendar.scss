@@ -1,0 +1,40 @@
+section.calendar {
+	.container {
+		background-color: $white !important;
+
+		.calendar-links {
+			flex-basis: 100%;
+			flex-direction: row;
+			font-size: 0.8em;
+			justify-content: flex-end;
+			margin-bottom: 0.5em;
+			max-width: 100% !important;
+
+			a {
+				margin-left: 0.5em;
+
+				i {
+					margin-right: 0.2em;
+				}
+			}
+		}
+
+		> div:nth-child(2) {
+			position: relative;
+			min-height: 1em;
+
+			&:after {
+				content: "Loading calendar...";
+				position: absolute;
+				height: 1em;
+				line-height: 1em;
+				z-index: 0;
+			}
+
+			> iframe {
+				position: relative;
+				z-index: 1;
+			}
+		}
+	}
+}

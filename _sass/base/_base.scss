@@ -1,0 +1,80 @@
+body {	
+	background: $color-bg;
+	color: $color-text;
+	font-family: $font-default;
+	font-size: $font-size;
+
+	@include xs {
+		font-size: $font-size-xs;
+	}
+	@include lg {
+		font-size: $font-size-lg;
+	}
+}
+
+main {
+	margin-top: $navbar-height;
+
+	@include xs {
+		margin-top: $navbar-height-xs;
+	}
+}
+
+div {
+	display: flex;
+	flex-direction: column;
+
+	&.row {
+		flex-direction: row;
+	}
+
+	&.column {
+		flex-direction: column;
+	}
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+	color: $color-header;
+	font-family: $font-header;
+	font-weight: bold;
+	margin: 0 0 $font-size;
+	padding: 0;
+	
+	@include xs {
+		margin: 0 0 $font-size-xs;
+	}
+	
+	@include lg {
+		margin: 0 0 $font-size-lg;
+	}
+}
+
+a {
+	color: $color-link;
+	text-decoration: none;
+
+	&:hover, &:active {
+		color: $color-link-active;
+	}
+}
+
+p {
+	margin: 0;
+	//margin: 0 0 1em;
+}
+
+li {
+	list-style: none;
+	text-decoration: none;
+}
+
+::selection {
+	background: $color-selection;
+	color: $white;
+}
+
+// for js media query detection
+.is-xs, .is-sm, .is-md, is-lg {
+	display: none;
+}

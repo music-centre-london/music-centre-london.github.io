@@ -1,0 +1,161 @@
+.row.blog {
+	margin-left: 2px - $half-gutter;
+	margin-right: 2px - $half-gutter;;
+
+	[class^=col] {
+		padding-left: 2px;
+		padding-right: 2px;
+		margin-bottom: 4px;
+	}
+}
+
+@mixin bpt($prop) {
+	@include transition(0.25s ease-out $prop);
+}
+
+a.blog-post {
+	display: block;
+	position: relative;
+	overflow: hidden;
+	position: relative;
+	z-index: 1;
+
+	.post-image {
+		width: 100%;
+
+		img {
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	.post-content {
+		padding: 1em;
+	}
+
+	&:not(.poetry) {
+		.post-content {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			display: none;
+			background-color: rgba(0,0,0,0.5);
+			color: $white;
+
+			header.post-title h1, h2 {
+				color: $white;
+			}
+		}
+	}
+
+	&:hover {
+		.post-content {
+			display: block;
+		}
+	}
+
+	.img, 
+	.darken {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background-size: cover;
+		background-position: center center;
+	}
+
+	.img {
+		@include transform(scale(1.0,1.0) translateZ(0));
+		-webkit-backface-visibility: hidden;
+		@include bpt(transform);
+	}
+
+	.darken {
+		background: linear-gradient(tr(0.4), tr(0.7));
+	}
+
+	.text {
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		bottom: -((2.8+0.75)*0.8em);
+		color: white;
+		padding: 1.2em;
+		transition: 0.2s linear all;
+
+		@include bpt(bottom);		
+
+		h1 {
+			font-size: 1.2em;
+			line-height: 1.1;
+			color: white;
+			font-weight: 600;
+			margin: 0;
+		}
+
+		p {
+			font-size: 0.8em;
+			margin: 0.75em 0 0;
+			line-height: 1.4;
+			height: 2.8em;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			display: -webkit-box;
+			-webkit-line-clamp: 2;
+			-webkit-box-orient: vertical;
+			opacity: 0;
+
+			@include bpt(opacity);
+
+			&:empty {
+				display: none;
+			}
+		}
+	}
+
+	&:hover {
+		.text {
+			bottom: 0;
+
+			p {
+				opacity: 1;
+			}
+		}
+
+		.img {
+			@include transform(scale(1.25,1.25) translateZ(0));
+		}
+	}
+
+	&.view-all {
+		background: $color-primary;
+		padding: 0;
+
+		@include xs {
+			height: auto;
+
+			.text {
+				position: static;
+
+				p {
+					display: none;
+				}
+			}
+		}
+	}
+}
+
+.recent {
+	position: absolute;
+	top: -30px;
+	color: $color-primary;
+	font-weight: bold;
+}
+
+.blog-grid {
+	padding-top: 4px;
+}

@@ -1,0 +1,56 @@
+// ---- Color Definitions ---- //
+// ---- Greyscale ---- //
+
+$white: #fff;
+$lightgray: #f9f9f9;
+$midgray: #ebebeb;
+$gray: #bbb;
+$darkgray: #777;
+$blackgray: #444;
+$black: $blackgray;
+
+// ---- City Benchmarks Colors ---- //
+
+$cb-red: #be1e2d;
+$cb-light-red: #ff5559;
+$cb-orange: #f15a29;
+$cb-light-orange: #f7941d;
+
+// ---- Old Projects ---- //
+
+$blue-milk-blue: rgb(46, 78, 126);
+$codogo-red: #ff5559;
+$codogo-write-orange: #f60;
+$knowt-green: #18bc9c;
+$knowt-navy: #2c3e50;
+
+$con-purple: #444048;
+$wri-orange: rgb(255, 165, 0);
+
+@function tr($opacity) {
+	@return rgba(0,0,0,$opacity)
+};
+
+// ---- Color Settings ---- //
+
+$color-primary: $cb-red;
+$color-primary-dark: toblack($color-primary, 0.4);
+$color-primary-light: towhite($color-primary, 0.4);
+$color-secondary: $midgray;
+$color-secondary-dark: toblack($color-secondary, 0.4);
+$color-secondary-light: towhite($color-secondary, 0.4);
+$color-accent: #2c3e50;
+$color-accent-dark: toblack($color-accent, 0.4);
+$color-accent-light: towhite($color-accent, 0.4);
+
+$color-text: $black;
+$color-header: $color-text;
+$color-link: $color-primary;
+$color-link-active: $color-primary-dark;
+
+$color-bg: $white;
+$color-selection: $color-primary;
+
+$color-success: #5cb85c;
+$color-error: toblack(#d9534f, 0.25);
+

@@ -1,0 +1,93 @@
+@-webkit-keyframes BounceIn {
+	0% {
+		width: 0;
+		height: 0;
+		margin: 0;
+	}	
+	80% {
+		width: 7%;
+		height: 7%;
+		margin: -3.5%;
+	}	
+	100% {
+		width: 6%;
+		height: 6%;
+		margin: -3%;
+	}	
+}
+
+@keyframes BounceIn {
+	0% {
+		width: 0;
+		height: 0;
+		margin: 0;
+	}	
+	80% {
+		width: 7%;
+		height: 7%;
+		margin: -3.5%;
+	}	
+	100% {
+		width: 6%;
+		height: 6%;
+		margin: -3%;
+	}	
+}
+
+#animated-map {
+	margin: 10%;
+	padding-top: 80%;
+	width: 80%;
+	background: url('/assets/img/earth.svg') no-repeat;
+	background-size: contain;
+	background-position: center center;
+	position: relative;
+
+	.marker {
+		border-radius: 50%;
+		position: absolute;
+		text-align: center;
+
+		animation: BounceIn 0.7s;
+		animation-fill-mode: both;
+
+		-webkit-animation: BounceIn 0.7s;
+		-webkit-animation-fill-mode: both;
+
+
+		&:nth-child(1) {
+			top: 25%;
+			left: 75%;	
+			background-color: $cb-orange;
+			animation-delay: 0.6931471805s;
+		}
+
+		&:nth-child(2) {
+			top: 35%;
+			left: 36%;
+			background-color: $cb-light-orange;
+			animation-delay: 1.09861228867s;
+		}
+
+		&:nth-child(3) {
+			top: 74%;
+			left: 52%;
+			background-color: $cb-light-red;
+			animation-delay: 1.38629436112s;
+		}
+
+		&:nth-child(4) {
+			top: 33%;
+			left: 84%;
+			background-color: $cb-red;
+			animation-delay: 1.60943791243s;
+		}
+
+		&:nth-child(5) {
+			top: 55%;
+			left: 82%;
+			background-color: $cb-light-orange;
+			animation-delay: 1.79175946923s;
+		}
+	}
+}

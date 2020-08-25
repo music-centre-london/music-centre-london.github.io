@@ -1,0 +1,58 @@
+.button, 
+a.button {
+	@extend .noselect;
+
+	background: $color-primary;
+	border-radius: 4px;
+	color: $white;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 1;
+	margin-top: 1em;
+	padding: .7em 1em;
+	transition: 0.5s;
+
+	@include xs {
+		font-size: 16px;
+	}
+
+	&:hover {
+		background: toblack($color-primary, 0.1);
+		@include shadow(1);
+	}
+
+	&.small {
+		font-size: $font-size;
+		@include xs {
+			font-size: $font-size-xs;
+		}
+		
+		line-height: 1.1;
+	}
+
+	&.em {
+		font-size: 1em;
+	}
+
+	&.cta {
+		font-size: 24px;
+	}
+
+	&.white {
+		background: $white;
+
+		&:hover {
+			background: $lightgray;
+		}
+	}
+
+	&.black {
+		background: $black;
+
+		&:hover {
+			background: $darkgray;
+		}
+	}
+}

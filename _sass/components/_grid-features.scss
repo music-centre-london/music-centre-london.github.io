@@ -1,0 +1,24 @@
+ul.feature-grid {
+	padding: 0;
+
+	li {
+		align-items: center;
+		display: flex;
+		list-style: none;
+		margin-left: 3em;
+		position: relative;
+
+		&:not(:last-child) {
+			margin-bottom: 1.5em;
+		}
+
+		i {
+			font-size: 2em;
+			left: -2em;
+			margin-right: 1em;
+			position: absolute;
+			text-align: center;
+			width: 2em;
+		}
+	}
+}

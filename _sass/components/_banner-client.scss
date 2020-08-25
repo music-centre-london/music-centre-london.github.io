@@ -1,0 +1,42 @@
+section.banner-client {
+	background-position: bottom right;
+	background-size: cover; 
+	background: #333;
+	overflow: hidden;
+	padding: 0;
+	position: relative;
+
+	.container {
+		.banner-text {
+			color: $white;
+			display: block;
+		}
+
+		.banner-image {
+			img {
+				max-width: 50%;
+				max-height: 50%;
+			}
+		}
+	}
+
+	// --- Specific banners
+
+	&.oslo {
+		background: #57C8AA;
+
+		.container {
+			.button {
+				color: #57C8AA;
+			}
+		}
+
+		.banner-image {
+			display: flex;
+			
+			img {
+				filter: brightness(0) invert(1);
+			}
+		}
+	}
+}

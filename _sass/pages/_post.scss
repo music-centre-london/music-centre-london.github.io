@@ -1,0 +1,144 @@
+body.post {	
+	article.post-page {
+		.post-content {
+			align-items: center;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			font-family: $font-default;
+			font-size: 20px;
+			justify-content: space-around;
+			line-height: 1.6;
+			margin-left: auto;
+			margin-right: auto;
+			max-width: 700px;
+			text-align: justify;
+
+			@include bp(xs, only) {
+				font-size: 14px;
+			}
+
+			p, p *, ol, ul, li, a, table, h2, h3 {
+				margin-bottom: 1em;
+			}
+
+			ol, ul {
+				padding-left: 1.5em;
+
+				li {
+					margin-bottom: 0.25em;
+					position: relative;
+
+					&:before {
+						content: " ";
+						position: absolute;
+						top: 0.5em;
+						left: -1.5em;
+						height: 0.5em;
+						width: 0.5em;
+						background: $color-text;
+						border-radius: 0.25em;
+					}
+				}
+			}
+
+			blockquote {
+				border-left: 5px solid rgba(0,0,0,0.1);
+				padding-left: 1em;
+			}
+
+			h2, h3 {
+				font-family: $font-header;
+				text-transform: uppercase;
+			}
+
+			h2 {
+				font-size: 1.6em;
+				margin-top: 1em;
+			}
+
+			h3 {
+				font-size: 1,4em;
+				margin-top: 1em;
+			}
+
+			img {
+				max-width: 100%;
+			}
+
+			code {
+				padding: 2px 6px;
+			    font-size: 80%;
+			    background-color: #f4f4f4;
+			    border: 1px solid #ddd;
+			    border-radius: 4px;
+			    margin: 0 2px;
+			}
+
+			pre {
+				overflow-y: auto;
+
+				&.highlight code {
+					padding: 0;
+				    background-color: transparent;
+				    border: 0;
+				    margin: 0;
+				}
+
+				&.highlight {
+					padding: 2px 6px;
+				    background-color: #f4f4f4;
+				    border: 1px solid #ddd;
+				    border-radius: 4px;
+				    margin: 0 2px;
+				    margin-bottom: 20px;
+				    font-size: 1em;
+				}
+			}
+
+			a {
+				white-space: nowrap;
+				position: relative;
+
+				&:before {
+					content: ' ';
+					position: absolute;
+					width: 100%;
+					height: 2px;
+					bottom: 0;
+					background: $color-link;
+					@include transform(translateY(0));
+					transition: 0.2s ease-in-out all;
+					opacity: 0;
+				}
+
+				&:hover:before {
+					@include transform(translateY(-2px));
+					opacity: 1;
+				}
+			}
+
+			ul#markdown-toc {
+				ul {
+					margin: 0.25em 0;
+				}
+			}
+
+			.post-meta {
+				opacity: 0.5;
+				font-size: 0.8em;
+				font-family: $font-header;
+			}			
+		}
+	}
+
+	section.related-posts {
+		& > h2 {
+			text-transform: uppercase;
+			color: $color-primary;
+			text-align: center;
+			margin-bottom: $gutter-width;
+			line-height: 1;
+		}
+	}
+}

@@ -1,0 +1,177 @@
+.form-para {
+
+	.input {
+		min-width: 4em;
+		max-width: 100%;
+		white-space: nowrap;
+		border-bottom: 2px $codogo-red dashed;
+		margin: 0 2px -2px;
+		color: $codogo-red;
+		display: inline-block;
+		overflow-x: hidden;
+		overflow-y: visible;
+		overflow: hidden;
+		vertical-align: bottom;
+		cursor: text;
+
+		&.wider {
+			min-width: 4em;
+		}
+
+		&:active, &:focus {
+			outline: 0;
+		}
+
+		&:empty:before {
+			opacity: 0.4;
+		}
+		&.desc:empty:before {
+			content: 'making a website';
+		}
+		&.name:empty:before {
+			content: 'Joe Bloggs';
+		}
+		&.email:empty:before {
+			content: 'joebloggs@example.com';
+		}
+	}
+}
+
+form.form-trad {
+	width: 100%;
+	background: $color-primary;
+	padding: 1.5em;
+
+	input, textarea {
+		width: 100%;
+		font-size: 1.0em;
+		padding: 0.75em;
+		margin-bottom: 1.2em;
+		border: 0;
+		font-weight: 600;
+		color: $color-text;
+		resize: none;
+		border-radius: 3px;
+
+		&:focus {
+			outline: 0;
+		}
+
+		&.invalid {
+		}
+
+		&[type="submit"] {
+			margin: 0;
+			background: $codogo-red;
+			color: white;
+			cursor: pointer;
+			font-size: 1.1em;
+			padding: 0.6em 0 0.7em;
+
+			&.success {
+				background: $color-success;
+			}
+
+			&.error {
+				background: $color-error;
+			}
+		}
+	}
+
+	label {
+		display: block;
+		margin-bottom: 0.4em;
+		color: $codogo-red;
+		text-transform: uppercase;
+		font-weight: 700;
+		font-size: 0.8em;
+		letter-spacing: 1px;
+	}
+
+	.warning {
+		color: $codogo-red;
+		position: relative;
+		height: 0;
+		width: 100%;
+
+		.fa {
+			position: absolute;
+			top: -1.2em - 1.75em - 0.2em;
+			right: 0.75em;
+			opacity: 0;
+			@include transform(translateX(4px));
+			@include transition(0.2s linear all);
+
+		}
+	}
+
+	#input-task + .warning .fa {
+		top: -1.2em - 1.75em - 0.2em - 0.3em;
+	}
+
+	.invalid + .warning .fa {
+		opacity: 1;
+		@include transform(translateX(0px));
+	}
+
+	.error-msg {
+		text-align: center;
+		color: white;
+		padding-top: 0em;
+		height: 0em;
+		opacity: 0;
+		font-size: 0.9em;
+		line-height: 1.2;
+		@include transition(0.2s linear all);
+
+		a {
+			color: $codogo-red;
+			text-decoration: underline;
+		}
+	}
+
+	.success + .error-msg, .pls-fill + .error-msg {
+		height: 1.5em;
+		padding-top: 0.5em;
+		opacity: 1;
+	}
+
+	.error + .error-msg {
+		height: 2.5em;
+		padding-top: 0.5em;
+		opacity: 1;
+	}
+}
+
+body.landing {
+	form.form-trad {
+		@include shadow(1);
+	}
+}
+
+body:not(.landing) {
+	form.form-trad {
+		background: none;
+		padding: 0;
+
+		input, textarea {
+			border: 1px solid towhite($color-primary,0.8);
+
+			&:focus {
+				//border: 1px solid towhite($color-primary,0);
+			}
+		}
+
+		label {
+			color: $color-text;
+		}
+
+		input[type="submit"] {
+			border: 0;
+		}
+
+		.error-msg {
+			color: towhite($color-text,0.25);
+		}
+	}
+}

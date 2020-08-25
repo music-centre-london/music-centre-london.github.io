@@ -1,0 +1,22 @@
+<section id="blog" name="blog">
+	<div class="container-fluid">
+		<div class="row blog post-list">
+			{% for post in site.posts limit: 10 %}
+				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+					{% include html/post-thumbnail.html %}
+				</div>
+			{% endfor %}
+
+			<!--
+			<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+				<a class="blog-post view-all" href="{{ site.baseurl }}/blog/">
+					<div class="text">
+						<h1>View all posts</h1>
+
+						<p>Go to the blog page, where you can browse all of our posts.</p>
+					</div>
+				</a>
+			</div>-->
+		</div>
+	</div>			
+</section>

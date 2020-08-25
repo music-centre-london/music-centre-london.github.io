@@ -1,0 +1,134 @@
+main {
+	> section:first-child,
+	> a:first-child > section {
+		margin-top: $navbar-height;
+
+		@include xs {
+			margin-top: $navbar-height-xs;
+		}
+	}
+}
+
+section {
+	&:not(.banner) {
+		flex-basis: 100%;
+		background-size: cover;
+		flex-direction: row;
+		display: flex;
+		flex-wrap: wrap;
+
+		> .container {
+			background: towhite($color-primary, 0.99);
+			background: towhite(black, 0.99);
+			display: flex;
+			flex-direction: column;
+			flex-wrap: wrap;
+			margin-left: auto;
+			margin-right: auto;
+			padding: 3em;
+			flex-basis: 100%;
+			
+			&:empty {
+				min-height: 15em;
+			}
+
+			&:not(.full) {
+				@include bp(sm, min) {
+					flex-basis: 50%;
+				}
+			}
+
+			&.no-pad {
+				padding: 0;
+			}
+
+			> div {
+				max-width: 700px;
+			}
+
+			&.second {
+				@include xs {
+					order: 2;
+				}
+			}
+		}
+
+		[class^=col] {
+			margin-bottom: $gutter-width;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	h1, h2, h3 {
+		font-family: $font-header;
+	}
+
+	a.btn.more-info {
+		margin-top: 0.6em;
+	}
+
+	ul, ol {
+		margin: initial;
+		padding: 0 0 0 2em;
+		margin-bottom: 1em;
+	}
+
+	ul {
+		list-style: initial;
+
+		li {
+			display: list-item;
+			list-style: disc;
+		}
+	}
+
+	ol {
+		li {
+			list-style: decimal;
+		}
+	}
+
+	p {
+		margin-bottom: 1em;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	.small {
+		font-size: 0.7em;
+	}
+}
+
+body.home main > section:nth-child(2n+1),
+body:not(.home) main > section:nth-child(2n+1) {
+	&:not(.banner):not(.banner-client) {
+		> .container:nth-child(2n+1) {
+			background: towhite($color-primary, 0.95);
+			background: towhite(black, 0.95);
+		}
+	}
+}
+
+body.home main > section:nth-child(2n),
+body:not(.home) main > section:nth-child(2n) {
+	&:not(.banner):not(.banner-client) {
+		@include bp(sm, min) {
+			> .container:nth-child(2n) {
+				background: towhite($color-primary, 0.95);
+				background: towhite(black, 0.95);
+			}
+		}
+
+		@include xs {
+			> .container:nth-child(2n+1) {
+				background: towhite($color-primary, 0.95);
+				background: towhite(black, 0.95);
+			}
+		}
+	}
+}
