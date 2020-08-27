@@ -1,6 +1,5 @@
 #Build Settings
 destination: public
-source: src
 exclude: ['node_modules']
 
 # Site settings
