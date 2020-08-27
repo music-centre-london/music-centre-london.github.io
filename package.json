@@ -4,22 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "kill": "pkill node && pkill jekyll",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build-webpack": "webpack --config webpack/webpack.config.js",
     "build-jekyll": "jekyll build",
-    "build": "yarn run build-webpack && yarn run build-jekyll",
-    "watch-webpack": "webpack --config  webpack/webpack.config.js --watch",
+    "build": "npm run build-jekyll",
     "watch-jekyll": "jekyll serve --watch --trace",
-    "watch": "yarn run watch-webpack & yarn run watch-jekyll"
+    "watch": "npm run watch-jekyll"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://mcclowes@bitbucket.org/codogo/mcl-marketing-site.git"
+    "url": "git+https://github.com/music-centre-london/music-centre-london.github.io.git"
   },
   "author": "",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/codogo/mcl-marketing-site#readme",
+  "homepage": "https://github.com/music-centre-london/music-centre-london.github.io#readme",
   "dependencies": {
     "codogo-default-scss": "^2.0.1",
     "jquery": "3.0.0",
