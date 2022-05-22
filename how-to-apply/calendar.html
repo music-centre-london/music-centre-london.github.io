@@ -1,0 +1,34 @@
+---
+layout: default
+title: Calendar
+permalink: /how-to-apply/calendar/
+bannerimage: '/assets/img/banners/prom-3.jpg'
+slug: calendar
+section: contact
+---
+
+<section class="banner" style="background-image: url({{ page.bannerimage }}); background-size: cover; background-position: center center;">
+	<div class="container">
+		<h1>{{ page.title }}</h1>
+	</div>
+</section>
+
+<section class="calendar">
+	<div class="container full">
+		<div class="row">
+			<h3>Calendar</h3>
+
+			<div class="calendar-links">
+				<a href="https://calendar.google.com/calendar/render?cid=http://events.time.ly/bh977i7/export?format%3Dics%26no_html%3Dtrue"><i class="fa fa-google fa-fw" aria-hidden="true"></i>Add to Google</a>
+				
+				<a href="webcal://events.time.ly/bh977i7/export?format=ics&no_html=true"><i class="fa fa-apple fa-fw" aria-hidden="true"></i>Add to Apple Calendar</a>
+				
+				<a href="webcal://events.time.ly/bh977i7/export?format=ics&no_html=true"><i class="fa fa-windows fa-fw" aria-hidden="true"></i>Add to Outlook Calendar</a>
+			</div>
+		</div>
+
+		<script src="//dashboard.time.ly/js/embed.js" data-src="https://events.time.ly/bh977i7?view=month" data-max-height="0" id="timely_script" class="timely-script"></script>
+	</div>
+</section>
+
+{% include html/section/mailing-list.html %}
