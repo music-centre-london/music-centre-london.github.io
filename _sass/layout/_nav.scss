@@ -288,9 +288,9 @@ nav {
 
 		.dropdown-content_NEW a:hover {background-color: #e7e7e7;}
 
-		.dropdown:hover_NEW .dropdown-content {display: block;}
+		.dropdown_NEW:hover .dropdown-content_NEW {display: block;}
 
-		.dropdown:hover_NEW .dropbtn {background-color: #be1e2e;}
+		.dropdown_NEW:hover .dropbtn_NEW {background-color: #be1e2e;}
 
 		.dropdown-content {
 			background: $lightgray;
