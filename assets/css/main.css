@@ -1900,7 +1900,7 @@ nav {
         top: 50px; } }
     @media (min-width: 992px) {
       nav ul.navbar-panel {
-        display: none; } }
+        top: 50px; } }
     nav ul.navbar-panel li {
       list-style: none;
       text-decoration: none;
