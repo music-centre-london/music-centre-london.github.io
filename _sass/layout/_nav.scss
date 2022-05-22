@@ -256,6 +256,41 @@ nav {
 				}
 			}
 		}
+		
+		.dropbtn_NEW {
+		  background-color: #be1e2d;
+		  color: white;
+		  padding: 16px;
+		  font-size: 16px;
+		  border: none;
+		}
+
+		.dropdown_NEW {
+		  position: relative;
+		  display: inline-block;
+		}
+
+		.dropdown-content_NEW {
+		  display: none;
+		  position: absolute;
+		  background-color: #fbfbfb;
+		  min-width: 180px;
+		  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		  z-index: 1;
+		}
+
+		.dropdown-content_NEW a {
+		  color: #be1e2d;
+		  padding: 12px 16px;
+		  text-decoration: none;
+		  display: block;
+		}
+
+		.dropdown-content_NEW a:hover {background-color: #e7e7e7;}
+
+		.dropdown:hover_NEW .dropdown-content {display: block;}
+
+		.dropdown:hover_NEW .dropbtn {background-color: #be1e2e;}
 
 		.dropdown-content {
 			background: $lightgray;

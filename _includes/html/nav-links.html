@@ -1,44 +1,24 @@
-<li>
-	<a class="link {% if page.section == 'about' %}active{% endif %}" href="{{ site.baseurl }}/about/">
-		<span>About Us</span><span class="dropdown-arrow">&#x25BC;</span>
-	</a>
-
-	<div class="dropdown-arrow"><span>&#x25BC;</span></div>
-
-	<ul class="dropdown-content">
-		<a class="link {% if page.slug == 'aims' %}active{% endif %}" href="{{ site.baseurl }}/about/aims/"><li>Our Aims</li></a>
-
-		<a class="link {% if page.slug == 'notable' %}active{% endif %}" href="{{ site.baseurl }}/about/notable/"><li>Notable Performances</li></a>
-
-		<a class="link {% if page.slug == 'team' %}active{% endif %}" href="{{ site.baseurl }}/about/young-apprentice/"><li>Our Apprentices</li></a>
-	</ul>
-</li>
-
-
-<li>
-	<a class="link {% if page.section == 'how-to-apply' %}active{% endif %}" href="{{ site.baseurl }}/how-to-apply/">
-		<span>How to Apply</span><span class="dropdown-arrow">&#x25BC;</span>
-	</a>
-
-	<div class="dropdown-arrow"><span>&#x25BC;</span></div>
-
-	<ul class="dropdown-content">	
-		<a class="link {% if page.slug == 'calendar' %}active{% endif %}" href="{{ site.baseurl }}/how-to-apply/calendar/"><li>Calendar</li></a>
-	</ul>
-</li>
-
-<li>
-	<a class="link {% if page.section == 'contact' %}active{% endif %}" href="{{ site.baseurl }}/contact/">
-		<span>Contact</span><span class="dropdown-arrow">&#x25BC;</span>
-	</a>
-
-	<div class="dropdown-arrow"><span>&#x25BC;</span></div>
-
-	<ul class="dropdown-content">
-		<a class="link {% if page.slug == 'us' %}active{% endif %}" href="{{ site.baseurl }}/contact/"><li>Contact Us</li></a>
-
-		<a class="link {% if page.slug == 'getting-here' %}active{% endif %}" href="{{ site.baseurl }}/contact/getting-here/"><li>Locations</li></a>
-
-		<a class="link {% if page.slug == 'newsletter' %}active{% endif %}" href="{{ site.baseurl }}/contact/newsletter/"><li>Newsletter</li></a>
-	</ul>
-</li>
+<div class="dropdown_NEW">
+  <button class="dropbtn_NEW">About Us</button>
+  <div class="dropdown-content_NEW">
+    <a href="{{ site.baseurl }}/about/">About Us</a>
+    <a href="{{ site.baseurl }}/about/aims/">Our Aims</a>
+    <a href="{{ site.baseurl }}/about/notable/">Notable Performances</a>
+    <a href="{{ site.baseurl }}/about/young-apprentice/">Our Apprentices</a>
+  </div>
+</div>
+<div class="dropdown_NEW">
+  <button class="dropbtn_NEW">How to Apply</button>
+  <div class="dropdown-content_NEW">
+    <a href="{{ site.baseurl }}/how-to-apply/">How to Apply</a>
+    <a href="{{ site.baseurl }}/how-to-apply/calendar/">Calendar</a>
+  </div>
+</div>
+<div class="dropdown_NEW">
+  <button class="dropbtn_NEW">Contact</button>
+  <div class="dropdown-content_NEW">
+    <a href="{{ site.baseurl }}/contact/">Contact Us</a>
+    <a href="{{ site.baseurl }}/contact/getting-here/">Locations</a>
+    <a href="{{ site.baseurl }}/contact/newsletter/">Newsletter</a>
+  </div>
+</div>
