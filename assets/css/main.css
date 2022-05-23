@@ -1859,10 +1859,10 @@ nav {
         display: none; } }
   nav .navbar-panel-button {
     float: right;
-    font-size: 0.8em;
+    font-size: 1.2em;
     margin-right: 1em;
     position: relative;
-    text-decoration: none;
+    text-decoration: bold;
     text-transform: uppercase;
     z-index: 1;
     display: flex;
@@ -1871,18 +1871,6 @@ nav {
     @media (min-width: 992px) {
       nav .navbar-panel-button {
         display: none; } }
-    nav .navbar-panel-button:before {
-      content: 'Menu';
-      display: block;
-      transition: 0.2s linear opacity; }
-    nav .navbar-panel-button:after {
-      content: 'Close';
-      display: none;
-      transition: 0.2s linear opacity; }
-    nav .navbar-panel-button.open:before {
-      display: none; }
-    nav .navbar-panel-button.open:after {
-      display: block; }
   nav ul.navbar-panel {
     background: #fff;
     bottom: 0;

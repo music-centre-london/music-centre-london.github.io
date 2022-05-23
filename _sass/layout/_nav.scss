@@ -144,7 +144,7 @@ nav {
 
 	.navbar-panel-button {
 		float: right;
-		font-size: 0.8em;
+		font-size: 1.2em;
 		margin-right: 1em;
 		position: relative;
 		text-decoration: none;
@@ -157,28 +157,6 @@ nav {
 
 		@include bp(md) {
 			display: none;
-		}
-
-		&:before {
-			content: 'Menu';
-			display: block;
-			transition: 0.2s linear opacity;
-		}
-
-		&:after {
-			content: 'Close';
-			display: none;
-			transition: 0.2s linear opacity;
-		}
-
-		&.open {
-			&:before {
-				display: none;
-			}
-
-			&:after {
-				display: block;
-			}
 		}
 	}
 
