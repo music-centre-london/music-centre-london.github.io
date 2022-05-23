@@ -145,15 +145,16 @@ nav {
 	.navbar-panel-button {
 		float: right;
 		font-size: 1.2em;
-		margin-right: 1em;
-		position: relative;
+		margin-right: 0.1em;
+		position: fixed;
 		text-decoration: none;
+		right: 0;
 		text-transform: uppercase;
 		z-index: 1;
 
 		display: flex;
-		align-items: center;
-		justify-content: center;
+		align-items: right;
+		justify-content: right;
 
 		@include bp(md) {
 			display: none;
