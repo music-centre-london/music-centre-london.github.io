@@ -1851,10 +1851,10 @@ nav {
         border-radius: 3px;
         border: 2px solid #be1e2d;
         font-weight: bold; }
-        @media (max-width: 991px) {
+        @media (max-width: 801px) {
           nav ul.navbar-left li.cta {
             display: none; } }
-    @media (max-width: 991px) {
+    @media (max-width: 801px) {
       nav ul.navbar-left {
         display: none; } }
   nav .navbar-panel-button {
@@ -1866,7 +1866,7 @@ nav {
     display: flex;
     align-items: right;
     justify-content: right; }
-    @media (min-width: 992px) {
+    @media (min-width: 802px) {
       nav .navbar-panel-button {
         display: none; } }
   nav ul.navbar-panel {
