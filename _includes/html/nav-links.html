@@ -1,11 +1,14 @@
 <li>
-	<a class="link {% if page.section == 'about' %}active{% endif %}" href="{{ site.baseurl }}/about/">
+	<a class="link">
 		<span>About Us</span><span class="dropdown-arrow">&#x25BC;</span>
 	</a>
 
 	<div class="dropdown-arrow"><span>&#x25BC;</span></div>
 
 	<ul class="dropdown-content">
+	
+		<a class="link {% if page.slug == 'aims' %}active{% endif %}" href="{{ site.baseurl }}/about/"><li>About</li></a>
+	
 		<a class="link {% if page.slug == 'aims' %}active{% endif %}" href="{{ site.baseurl }}/about/aims/"><li>Our Aims</li></a>
 
 		<a class="link {% if page.slug == 'notable' %}active{% endif %}" href="{{ site.baseurl }}/about/notable/"><li>Notable Performances</li></a>
@@ -18,25 +21,29 @@
 
 
 <li>
-	<a class="link {% if page.section == 'how-to-apply' %}active{% endif %}" href="{{ site.baseurl }}/how-to-apply/">
+	<a class="link">
 		<span>How to Apply</span><span class="dropdown-arrow">&#x25BC;</span>
 	</a>
 
 	<div class="dropdown-arrow"><span>&#x25BC;</span></div>
 
 	<ul class="dropdown-content">	
+	
+		<a class="link {% if page.slug == 'calendar' %}active{% endif %}" href="{{ site.baseurl }}/how-to-apply/"><li>Apply</li></a>
+	
 		<a class="link {% if page.slug == 'calendar' %}active{% endif %}" href="{{ site.baseurl }}/how-to-apply/calendar/"><li>Calendar</li></a>
 	</ul>
 </li>
 
 <li>
-	<a class="link {% if page.section == 'contact' %}active{% endif %}" href="{{ site.baseurl }}/contact/">
+	<a class="link">
 		<span>Contact</span><span class="dropdown-arrow">&#x25BC;</span>
 	</a>
 
 	<div class="dropdown-arrow"><span>&#x25BC;</span></div>
 
 	<ul class="dropdown-content">
+	
 		<a class="link {% if page.slug == 'us' %}active{% endif %}" href="{{ site.baseurl }}/contact/"><li>Contact Us</li></a>
 
 		<a class="link {% if page.slug == 'getting-here' %}active{% endif %}" href="{{ site.baseurl }}/contact/getting-here/"><li>Locations</li></a>
