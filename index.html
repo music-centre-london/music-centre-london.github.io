@@ -13,20 +13,78 @@ bannerimage: '/assets/img/banners/prom-1.jpg'
 </section>
 
 <section>
-  <div style="
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 0 auto;
-    width: 100%;
-  ">
+  <style>
+    .flex-split {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
-    <!-- TEXT COLUMN (LEFT) -->
-    <div style="
+    .flex-split .text-column,
+    .flex-split .image-column {
       width: 50%;
-      padding: 20px;
       box-sizing: border-box;
-    ">
+    }
+
+    .flex-split .text-column {
+      padding: 20px;
+    }
+
+    .flex-split .image-column {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .flex-split .top-image {
+      background-image: url('/assets/img/banners/WaterAidphoto9.jpeg');
+      background-size: cover;
+      background-position: center;
+      width: 100%;
+      height: 300px;
+    }
+
+    .flex-split .bottom-images {
+      display: flex;
+      width: 100%;
+    }
+
+    .flex-split .bottom-images > div {
+      background-size: cover;
+      background-position: center;
+      width: 50%;
+      height: 150px;
+    }
+
+    .flex-split .bottom-left {
+      background-image: url('/assets/img/banners/WaterAidphoto8.jpeg');
+    }
+
+    .flex-split .bottom-right {
+      background-image: url('/assets/img/banners/WaterAidphoto2.jpeg');
+    }
+
+    @media (max-width: 768px) {
+      .flex-split .text-column,
+      .flex-split .image-column {
+        width: 100%;
+      }
+
+      .flex-split .bottom-images {
+        flex-direction: column;
+      }
+
+      .flex-split .bottom-images > div {
+        width: 100%;
+        height: 150px;
+      }
+    }
+  </style>
+
+  <div class="flex-split">
+
+    <!-- TEXT COLUMN -->
+    <div class="text-column">
       <i>
 				<p>Over the last 33 years more than 3,500 children and young people
 have received music tuition at our two centres. We are regularly
@@ -63,64 +121,14 @@ They speak for themselves.</p>
 			<p><b>Richard Frostick, Director of MCL</b></p>
     </div>
 
-    <!-- IMAGE COLUMN (RIGHT) -->
-    <div style="
-      width: 50%;
-      display: flex;
-      flex-direction: column;
-      box-sizing: border-box;
-    ">
-
-      <!-- Top full-width image -->
-      <div style="
-        background-image: url('/assets/img/banners/WaterAidphoto9.jpeg');
-        background-size: cover;
-        background-position: center;
-        width: 100%;
-        height: 300px;
-      "></div>
-
-      <!-- Two side-by-side images -->
-      <div style="
-        display: flex;
-        width: 100%;
-      ">
-        <div style="
-          background-image: url('/assets/img/banners/WaterAidphoto8.jpeg');
-          background-size: cover;
-          background-position: center;
-          width: 50%;
-          height: 150px;
-        "></div>
-        <div style="
-          background-image: url('/assets/img/banners/WaterAidphoto2.jpeg');
-          background-size: cover;
-          background-position: center;
-          width: 50%;
-          height: 150px;
-        "></div>
+    <!-- IMAGE COLUMN -->
+    <div class="image-column">
+      <div class="top-image"></div>
+      <div class="bottom-images">
+        <div class="bottom-left"></div>
+        <div class="bottom-right"></div>
       </div>
-
     </div>
+
   </div>
-
-  <!-- Responsive stacking via inline <style> block -->
-  <style>
-    @media (max-width: 768px) {
-      section > div {
-        flex-direction: column !important;
-      }
-      section > div > div {
-        width: 100% !important;
-      }
-      section > div > div:nth-child(2) > div:nth-child(2) {
-        flex-direction: column !important;
-      }
-      section > div > div:nth-child(2) > div:nth-child(2) > div {
-        width: 100% !important;
-        height: 150px !important;
-      }
-    }
-  </style>
 </section>
-
