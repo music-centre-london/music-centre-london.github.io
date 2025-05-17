@@ -13,12 +13,80 @@ bannerimage: '/assets/img/banners/prom-1.jpg'
 </section>
 
 <section>
-<div style="display: flex; width: 100%; margin: 0 auto;">
+  <style>
+    .mcl-flex-container {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
-  <!-- Text/Content Column (left side) -->
-  <div style="width: 50%; padding: 20px;">
-    <p>
-      			<i>
+    .mcl-text-column,
+    .mcl-image-column {
+      width: 50%;
+      box-sizing: border-box;
+    }
+
+    .mcl-text-column {
+      padding: 20px;
+    }
+
+    .mcl-image-column {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mcl-top-image {
+      background-image: url('/assets/img/banners/WaterAidphoto9.jpeg');
+      background-size: cover;
+      background-position: center;
+      width: 100%;
+      height: 400px;
+    }
+
+    .mcl-bottom-images {
+      display: flex;
+      width: 100%;
+    }
+
+    .mcl-bottom-images > div {
+      width: 50%;
+      height: 200px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .mcl-bottom-left {
+      background-image: url('/assets/img/banners/WaterAidphoto8.jpeg');
+    }
+
+    .mcl-bottom-right {
+      background-image: url('/assets/img/banners/WaterAidphoto2.jpeg');
+    }
+
+    @media (max-width: 768px) {
+      .mcl-text-column,
+      .mcl-image-column {
+        width: 100%;
+      }
+
+      .mcl-bottom-images {
+        flex-direction: column;
+      }
+
+      .mcl-bottom-images > div {
+        width: 100%;
+        height: 150px;
+      }
+    }
+  </style>
+
+  <div class="mcl-flex-container">
+
+    <!-- Text Column (Left) -->
+    <div class="mcl-text-column">
+      <i>
 				<p>Over the last 33 years more than 3,500 children and young people
 have received music tuition at our two centres. We are regularly
 oversubscribed and there is no doubt that we are a popular and
@@ -52,47 +120,16 @@ They speak for themselves.</p>
 			</i>
 			<br>
 			<p><b>Richard Frostick, Director of MCL</b></p>
-    </p>
-  </div>
-
-  <!-- Image Column (right side) -->
-  <div style="width: 50%; display: flex; flex-direction: column;">
-
-    <!-- Top full-width image -->
-    <div 
-      style="
-        background-image: url('/assets/img/banners/WaterAidphoto9.jpeg');
-        background-size: cover;
-        background-position: center;
-        width: 100%;
-        height: 400px;
-      ">
     </div>
 
-    <!-- Two side-by-side half-width images -->
-    <div style="display: flex; width: 100%;">
-      <div 
-        style="
-          background-image: url('/assets/img/banners/WaterAidphoto8.jpeg');
-          background-size: cover;
-          background-position: center;
-          width: 50%;
-          height: 200px;
-        ">
-      </div>
-      <div 
-        style="
-          background-image: url('/assets/img/banners/WaterAidphoto2.jpeg');
-          background-size: cover;
-          background-position: center;
-          width: 50%;
-          height: 200px;
-        ">
+    <!-- Image Column (Right) -->
+    <div class="mcl-image-column">
+      <div class="mcl-top-image"></div>
+      <div class="mcl-bottom-images">
+        <div class="mcl-bottom-left"></div>
+        <div class="mcl-bottom-right"></div>
       </div>
     </div>
 
   </div>
-
-</div>
-
 </section>
