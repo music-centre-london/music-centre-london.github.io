@@ -4,27 +4,36 @@ class: home
 bannerimage: '/assets/img/banners/prom-1.jpg'
 ---
 
-<section class="banner" style="background-image: url({{ page.bannerimage }}); background-position: center center;">
-  <div class="container" style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+<section class="banner" style="position: relative; background-image: url({{ page.bannerimage }}); background-position: center center; background-size: cover;">
 
-    <!-- LEFT CONTENT -->
-    <div class="splash" style="width: 48%; background-position: center left;">
-      <h1>PROMOTING MUSIC EDUCATION ACROSS LONDON</h1>
-      <h4>
-        Music Centre London is a registered charity with the objective to promote, maintain, 
-        improve and advance education by the provision of musical tuition to children and young persons of or under the age of
-        twenty-one across Islington and Southwark.
-      </h4>
-    </div>
-
-    <!-- RIGHT CONTENT -->
-    <div class="splash" style="width: 48%; background-position: center right; text-align: right;">
-      <h1>Test</h1>
-      <h4>Test text</h4>
-    </div>
-
+  <!-- LEFT PANEL -->
+  <div class="container restrict-width splash" style="width: 50%; padding: 2rem;">
+    <h1>PROMOTING MUSIC EDUCATION ACROSS LONDON</h1>
+    <h4>
+      Music Centre London is a registered charity with the objective to promote, maintain, 
+      improve and advance education by the provision of musical tuition to children and young persons of or under the age of
+      twenty-one across Islington and Southwark.
+    </h4>
   </div>
+
+  <!-- RIGHT FLOATING PANEL -->
+  <div style="
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 1rem 1.5rem;
+    max-width: 250px;
+    border-radius: 4px;
+    text-align: left;
+  ">
+    <h1 style="margin: 0 0 0.5rem;">Test</h1>
+    <h4 style="margin: 0;">Test text</h4>
+  </div>
+
 </section>
+
 
 <section>
 	<div class="container">
