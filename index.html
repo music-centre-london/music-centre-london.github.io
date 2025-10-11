@@ -4,11 +4,17 @@ class: home
 bannerimage: '/assets/img/banners/prom-1.jpg'
 ---
 
-<section class="banner" style="background-image: url({{ page.bannerimage }}); background-position: center center; background-size: cover; padding: 2rem 0;">
-  <div style="display: flex; justify-content: space-between; flex-wrap: wrap; width: 100%;">
+<section class="banner" style="
+  background-image: url({{ page.bannerimage }});
+  background-position: center center;
+  background-size: cover;
+  padding: 2rem 0;
+  width: 100vw;
+  overflow: hidden;
+">
+  <div style="display: flex; width: 100%; max-width: 100vw; margin: 0 auto;">
 
-    <!-- LEFT SIDE -->
-    <div class="splash" style="width: 50%; padding: 2rem;">
+    <div style="flex: 1; padding: 2rem; color: white;">
       <h1>PROMOTING MUSIC EDUCATION ACROSS LONDON</h1>
       <h4>
         Music Centre London is a registered charity with the objective to promote, maintain, 
@@ -17,8 +23,7 @@ bannerimage: '/assets/img/banners/prom-1.jpg'
       </h4>
     </div>
 
-    <!-- RIGHT SIDE -->
-    <div class="splash" style="width: 50%; padding: 2rem; text-align: right;">
+    <div style="flex: 1; padding: 2rem; text-align: right; color: white;">
       <h1>Test</h1>
       <h4>Test text</h4>
     </div>
